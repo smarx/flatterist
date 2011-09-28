@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebRole.Models.Compliment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="compliments">
+<tbody>
+@foreach (var compliment in Model)
+{
+    <tr>
+        <th>@compliment.Text</th>
+        <td><a href="http://audio.flatterist.com/audio/@compliment.AudioBlob">MP3</a></td>
+        <td id="approved">@(compliment.Approved ? "Approved" : "Pending")</td>
+        <td><a class="approve" href="/admin/approve/@compliment.RowKey">@(compliment.Approved ? "Unapprove" : "Approve")</a></td>
+    </tr>
+}
+</tbody>
+</table>
+
+<script type="text/javascript">
+    $(function () {
+        $('a.approve').click(function (e) {
+            var that = this;
+            var approved = $(this).text() == "Approve";
+            $.post(this.href, { approved: approved }, function () {
+                $(that).parent().prev().text(approved ? "Approved" : "Pending");
+                $(that).text(approved ? "Unapprove" : "Approve");
+            });
+            e.preventDefault();
+        });
+    });
+</script>

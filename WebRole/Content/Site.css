@@ -1,0 +1,101 @@
+body
+{
+    font-size: 24px;
+    /*font-size: .85em;*/
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background: url(/content/bg.png);
+    /*background-color: #f0f0f0;*/
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+fieldset 
+{
+    border:1px solid #ddd;
+    padding:0 1.4em 1.4em 1.4em;
+    margin:0 0 1.5em 0;
+}
+
+legend 
+{
+    font-size:1.2em;
+    font-weight: bold;
+}
+
+textarea 
+{
+    min-height: 75px;
+}
+
+.editor-label 
+{
+    margin: 1em 0 0 0;
+}
+
+.editor-field 
+{
+    margin:0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+#container { width: 75%; height: 100%; margin-top: 50px; margin-left: auto; margin-right: auto; padding: 20px; border-radius: 25px; box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2); background-color: white; }
+#flattery { text-align: center; font-family: 'Segoe Light', 'Segoe UI Light', 'Segoe UI Semilight', sans-serif; font-weight: normal; letter-spacing: -0.04em; margin: 0; padding: 30px; }
+
+#header { background: url(/content/logo.png) no-repeat center center; height: 100px; }
+#header h1 { margin: 0; }
+
+a img { border: none; }
+
+input#text { width: 75%; padding: 5px; font-size: 24px; }
+input#text:focus { background-color: #fffff0; }
+ol li { font-family: Georgia; font-size: 48px; }
+ol li p { font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif; font-size: 24px; margin: 0; padding: 0; }
+#container button { font-size: 16px; }
+
+#footer { text-align: center; width: 75%; margin: 20px auto 0px auto; font-size: 16px; }
+
+table.compliments th { text-align: left; font-weight: normal; }
+table.compliments td { padding-left: 30px; }
+
+#permalink { float: right; visibility: hidden; text-decoration: none; color: black; font-size: 16px;}
+#permalink:hover { text-decoration: underline; }

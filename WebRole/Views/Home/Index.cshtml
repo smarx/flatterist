@@ -1,0 +1,57 @@
+﻿@using Microsoft.WindowsAzure
+@using Microsoft.WindowsAzure.StorageClient
+@using WebRole.Models;
+@model string
+@{
+    ViewBag.Title = "The Flatterist";
+}
+<a id="refresh" href="/" style="float:right;visibility:hidden;" title="Get another compliment"><img src="/content/exchange32.png" alt="Get another compliment" style="width: 24px" /></a>
+<p id="flattery"><span id="text"></span></p>
+<audio id="backgroundAudio" autoplay="autoplay" loop="loop">
+    <source type="audio/mp3" src="@(ViewBag.BackgroundBaseUrl).mp3" />
+    <source type="audio/ogg" src="@(ViewBag.BackgroundBaseUrl).ogg" />
+</audio>
+<audio id="complimentAudio" autoplay="autoplay"></audio>
+<a id="permalink" title="Permanent link to this compliment">#</a>
+<div style="clear:right"></div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#backgroundAudio')[0].volume = 0.25;
+        $('#mute').css('visibility', 'visible');
+        $('#backgroundAudio').bind('ended', function () { this.currentTime = 0; this.play(); });
+        function loadCompliment(id) {
+            $('#refresh, #permalink').css('visibility', 'hidden');
+            var url = '/api/getrandomcompliment';
+            if (id) url = '/api/getcompliment/' + id;
+            $.get(url, function (data) {
+                $('#text').text(data.Text);
+                $('#flattery').fitText();
+                $('#text').hide().fadeIn(2000);
+                $('#permalink').attr('href', '/' + data.Id);
+                var audio = $('#complimentAudio')[0];
+                if (audio.canPlayType('audio/mp3')) {
+                    audio.type = 'audio/mp3';
+                    audio.src = data.AudioBaseUrl + '.mp3';
+                } else {
+                    audio.type = 'audio/ogg';
+                    audio.src = data.AudioBaseUrl + '.ogg';
+                }
+                window.setTimeout(function () { $('#refresh, #permalink').css('visibility', 'visible').hide().fadeIn(1000); }, 1000);
+            });
+        }
+        loadCompliment("@Model");
+        @if (Model == null)
+        {
+            @:$('#refresh').click(function (e) { loadCompliment(); e.preventDefault(); });
+        }
+        var muted = false;
+        $('#mute').click(function () {
+            muted = !muted;
+            $('#mute').attr('src', muted ? '/content/speakermute32.png' : '/content/speaker32.png')
+            $('#backgroundAudio')[0].muted = muted;
+            $('#complimentAudio')[0].muted = muted;
+            if (!muted) { $('#complimentAudio')[0].play(); }
+        });
+    });
+</script>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="Flatterist" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+  <WebRole name="WebRole" vmsize="ExtraSmall">
+    <Startup>
+      <Task commandLine="startup\disableTimeout.cmd" executionContext="elevated" />
+    </Startup>
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Endpoint1" endpointName="Endpoint1" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="Endpoint1" protocol="http" port="80" />
+    </Endpoints>
+    <Imports>
+    </Imports>
+    <ConfigurationSettings>
+      <Setting name="DataConnectionString" />
+      <Setting name="AdminUsername" />
+      <Setting name="AdminPassword" />
+      <Setting name="CustomDomain" />
+      <Setting name="BackgroundBaseUrl" />
+    </ConfigurationSettings>
+  </WebRole>
+</ServiceDefinition>

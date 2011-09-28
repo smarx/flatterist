@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Suggest a Compliment - The Flatterist";
+}
+
+<script src="@Url.Content("~/Scripts/recorder.js")" type="text/javascript"></script>
+
+<form method="post" action="/suggest/submit" enctype="multipart/form-data">
+    <ol>
+        <li><p><label for="text">Enter a compliment:</label> <input type="text" name="text" id="text" /></p></li>
+        <li><p><label for="mp3">(optional) Upload an MP3 of the compliment:</label> <input type="file" name="mp3" /></p></li>
+        <li><p><label for="ogg">(optional) Upload an OGG of the compliment:</label> <input type="file" name="ogg" /></p></li>
+        <li><p><button type="submit">Submit!</button></p></li>
+    </ol>
+</form>
+
+<script type="text/javascript">
+    $(function () {
+        $('button').button();
+    });
+</script>

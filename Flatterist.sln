@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Flatterist", "Flatterist\Flatterist.ccproj", "{4DDEAE4D-C3CA-4231-847D-331B29D8D440}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRole", "WebRole\WebRole.csproj", "{8E687AB7-8E1B-43E6-89F4-11D9A8EED33F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DDEAE4D-C3CA-4231-847D-331B29D8D440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DDEAE4D-C3CA-4231-847D-331B29D8D440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DDEAE4D-C3CA-4231-847D-331B29D8D440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DDEAE4D-C3CA-4231-847D-331B29D8D440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E687AB7-8E1B-43E6-89F4-11D9A8EED33F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E687AB7-8E1B-43E6-89F4-11D9A8EED33F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E687AB7-8E1B-43E6-89F4-11D9A8EED33F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E687AB7-8E1B-43E6-89F4-11D9A8EED33F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

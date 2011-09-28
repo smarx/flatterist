@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Flatterist" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="2" osVersion="*">
+  <Role name="WebRole">
+    <Instances count="2" />
+    <ConfigurationSettings>
+      <Setting name="DataConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="AdminUsername" value="admin" />
+      <Setting name="AdminPassword" value="password" />
+      <Setting name="CustomDomain" value="" />
+      <Setting name="BackgroundBaseUrl" value="" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>
